@@ -1,0 +1,73 @@
+/**
+ * Write a description of class Cart here.
+ * 
+ * @author Nathan Roller 
+ * @version Feb. 3, 2016
+ */
+public class Cart
+{
+    private String shopper;
+    private int stock;
+    
+    public Cart(String inShopper)
+    {
+        shopper = inShopper;
+    }
+    
+    public String getShopper()
+    {
+        return shopper;
+    }
+    
+    public int getStock()
+    {
+        return stock;
+    }
+    
+    public double totalItemCost(double itemTotal)
+    {
+        itemTotal = cost * stock;
+        return itemTotal;
+    }
+    
+    public double totalCost(double total)
+    {
+        total = itemTotal + itemTotal;
+        return total;
+    }
+    
+    public double tax(double inTax)
+    {
+        inTax = total * .07;
+        return inTax;
+    }
+    
+    public double totalTax(double totalTax)
+    {
+        totalTax = inTax + total;
+        return totalTax;
+    }
+    
+    public void addItem1(GroceryItem inItem1, int inStock1)
+    {
+        inItem1 = null;
+        inStock1 = stock;
+    }
+    
+    public void addItem2(GroceryItem inItem2, int inStock2)
+    {
+        inItem2 = null;
+        inStock2 = stock;
+    }
+    
+    public Cart printReceipt()
+    {
+        System.out.println("Shopper name: " + getShopper());
+        System.out.println("----------------------");
+        System.out.println(getName() +": " + getStock() + " units at $" + getCost() + " per unit = $" + totalItemCost());
+        System.out.println("   ----> Subtotal = $" + totalCost());
+        System.out.println("   ----> 7% tax = $" + tax());
+        System.out.println("   ----> Total = $" + totalTax());
+    }
+        
+}

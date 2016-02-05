@@ -7,67 +7,46 @@
 public class Cart
 {
     private String shopper;
-    private int stock;
+    private int stock1;
+    private int stock2;
+    private GroceryItem item1;
+    private GroceryItem item2;
     
+    //Creates Cart objects
     public Cart(String inShopper)
     {
         shopper = inShopper;
     }
     
+    //Returns the name of the shopper
     public String getShopper()
     {
         return shopper;
     }
     
-    public int getStock()
-    {
-        return stock;
-    }
-    
-    public double totalItemCost(double itemTotal)
-    {
-        itemTotal = cost * stock;
-        return itemTotal;
-    }
-    
-    public double totalCost(double total)
-    {
-        total = itemTotal + itemTotal;
-        return total;
-    }
-    
-    public double tax(double inTax)
-    {
-        inTax = total * .07;
-        return inTax;
-    }
-    
-    public double totalTax(double totalTax)
-    {
-        totalTax = inTax + total;
-        return totalTax;
-    }
-    
+    //Adds Items to cart objects
     public void addItem1(GroceryItem inItem1, int inStock1)
     {
-        inItem1 = null;
-        inStock1 = stock;
+        item1 = inItem1;
+        stock1 = inStock1;
     }
     
     public void addItem2(GroceryItem inItem2, int inStock2)
     {
-        inItem2 = null;
-        inStock2 = stock;
+        item2 = inItem2;
+        stock2 = inStock2;
     }
     
-    public Cart printReceipt()
+    //Creates a reciept based on each shopper's specific cart
+    public void printReceipt()
     {
         System.out.println("Shopper name: " + getShopper());
         System.out.println("----------------------");
-        System.out.println(getName() +": " + getStock() + " units at $" + getCost() + " per unit = $" + totalItemCost());
-        System.out.println("   ----> Subtotal = $" + totalCost());
-        System.out.println("   ----> 7% tax = $" + tax());
-        System.out.println("   ----> Total = $" + totalTax());
+        System.out.println(item1.getName() +": " + stock1 + " units at $" + item1.getCost() + " per unit = $" + item1.getCost() * stock1);
+        System.out.println(item2.getName() +": " + stock2 + " units at $" + item2.getCost() + " per unit = $" + item2.getCost() * stock2);
+        System.out.println("   ----> Subtotal = $");
+        System.out.println("   ----> 7% tax = $");
+        System.out.println("   ----> Total = $");
     }
         
 }
